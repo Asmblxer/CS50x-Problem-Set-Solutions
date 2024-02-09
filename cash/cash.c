@@ -38,9 +38,11 @@ int main(void)
 int get_cents(void)
 {
     int money;
-    while(true) {
+    while (true)
+    {
         money = get_int("Change owed: ");
-        if(money < 1) continue;
+        if (money < 1)
+            continue;
         break;
     }
     return money;
