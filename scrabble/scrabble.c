@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -19,11 +19,11 @@ int main(void)
     int score2 = compute_score(word2);
 
     // TODO: Print the winner
-    if(score1 == score2)
+    if (score1 == score2)
     {
         printf("Tie!\n");
     }
-    else if(score1 > score2)
+    else if (score1 > score2)
     {
         printf("Player 1 wins!\n");
     }
@@ -31,17 +31,16 @@ int main(void)
     {
         printf("Player 2 wins!\n");
     }
-    // printf("%s : %d\n%s : %d\n", word1, score1, word2, score2);
 }
 
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
     int score = 0;
-    for(int i = 0; i < strlen(word); i++)
+    for (int i = 0; i < strlen(word); i++)
     {
         word[i] = tolower(word[i]);
-        if(word[i] - 'a' >= 26 || word[i] - 'a' < 0)
+        if (word[i] - 'a' >= 26 || word[i] - 'a' < 0)
         {
             continue;
         }
