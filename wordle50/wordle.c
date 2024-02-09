@@ -1,6 +1,6 @@
 #include <cs50.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 
@@ -84,7 +84,8 @@ int main(int argc, string argv[])
 
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
-        for (int j = 0; j < wordsize; j++) {
+        for (int j = 0; j < wordsize; j++)
+        {
             status[j] = 0;
         }
         // Calculate score for the guess
@@ -105,8 +106,10 @@ int main(int argc, string argv[])
 
     // Print the game's result
     // TODO #7
-    if(won == true) printf("You won!\n");
-    else printf("The Right word is %s", choice);
+    if (won == true)
+        printf("You won!\n");
+    else
+        printf("The Right word is %s", choice);
 
     // that's all folks!
     return 0;
@@ -118,7 +121,8 @@ string get_guess(int wordsize)
 
     // ensure users actually provide a guess that is the correct length
     // TODO #3
-    while (strlen(guess) != wordsize) {
+    while (strlen(guess) != wordsize)
+    {
         guess = get_string("Input a 5-letter word: ");
     }
 
@@ -131,13 +135,17 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     // compare guess to choice and score points as appropriate, storing points in status
     // TODO #5
-    for (int i = 0; i < wordsize; i++) {
-        for (int j = 0; j < wordsize; j++) {
-            if(guess[i] == choice[j] && i == j) {
+    for (int i = 0; i < wordsize; i++)
+    {
+        for (int j = 0; j < wordsize; j++)
+        {
+            if (guess[i] == choice[j] && i == j)
+            {
                 status[i] = EXACT;
                 break;
             }
-            else if(guess[i] == choice[j]) {
+            else if (guess[i] == choice[j])
+            {
                 status[i] = CLOSE;
             }
         }
@@ -160,10 +168,14 @@ void print_word(string guess, int wordsize, int status[])
 {
     // print word character-for-character with correct color coding, then reset terminal font to normal
     // TODO #6
-    for (int i = 0; i < wordsize; i++) {
-        if(status[i] == EXACT) printf(GREEN"%c"RESET, guess[i]);
-        else if(status[i] == CLOSE) printf(YELLOW"%c"RESET, guess[i]);
-        else printf(RED"%c"RESET, guess[i]);
+    for (int i = 0; i < wordsize; i++)
+    {
+        if (status[i] == EXACT)
+            printf(GREEN "%c" RESET, guess[i]);
+        else if (status[i] == CLOSE)
+            printf(YELLOW "%c" RESET, guess[i]);
+        else
+            printf(RED "%c" RESET, guess[i]);
     }
 
     printf("\n");
