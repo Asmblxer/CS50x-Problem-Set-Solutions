@@ -1,0 +1,15 @@
+sort1 uses: Bubble sort
+
+How do you know?: because it take a smaller time than sort3 in the best case
+
+sort2 uses: Merge sort
+
+How do you know?: because it is the faster one and it has a constant Runtime in the the 3 cases
+
+sort3 uses: Selection sort
+
+How do you know?: because it take a bigger time than sort1 in the best case
+
+sort1   63  209 247
+sort2   70  68  66
+sort3   171 161 201
