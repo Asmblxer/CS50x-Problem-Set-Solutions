@@ -15,14 +15,7 @@ int main(void)
             for (int i = 1; i <= tmp; i++)
             {
                 for (int x = 1; x <= tmp - i; x++)
-                {
                     printf(" ");
-                }
-                for (int j = 1; j <= i; j++)
-                {
-                    printf("#");
-                }
-                printf("  ");
                 for (int j = 1; j <= i; j++)
                 {
                     printf("#");
